@@ -1,0 +1,55 @@
+@use '../abstracts/' as a;
+
+.section7 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 40vh;
+
+  @include a.screen(smallScreen) {
+    min-height: 80rem;
+  }
+
+  &__title {
+    margin-top: 2rem;
+    font-size: clamp(1rem, 10vw, 7rem);
+    font-family: 'Lobster', sans-serif;
+    @include a.screen(smallScreen) {
+      padding-top: 15.3rem;
+    }
+  }
+
+  &__paragraph {
+    padding: 2rem;
+    font-size: clamp(1rem, 4vw, 3rem);
+    text-align: center;
+    @include a.screen(smallScreen) {
+      padding: 2rem 25rem;
+    }
+  }
+
+  &__form {
+    margin-top: 5rem;
+    max-height: 6.5rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 0 8rem;
+  }
+
+  &__input {
+    border: none;
+    font-size: 1.6rem;
+    padding: 0.8rem 0;
+
+    &::placeholder {
+      color: gray;
+      font-size: 2rem;
+    }
+  }
+  &__button {
+    border-radius: unset !important;
+    min-height: 100% !important;
+    font-size: clamp(1rem, 10vw, 3rem) !important;
+  }
+}

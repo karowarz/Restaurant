@@ -1,0 +1,70 @@
+@use '../abstracts/' as a;
+.navbar {
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  gap: 2.4rem;
+  background-color: hsl(0 0 0 / 0.8);
+  position: fixed;
+  right: 0;
+  padding: 10rem 4rem 5rem 4rem;
+  justify-content: space-between;
+  top: 0;
+  transition: 0.2s ease-in;
+
+  &[data-nav-open='false'] {
+    transform: translateX(100%);
+    @include a.screen(smallScreen) {
+      transform: translateX(0);
+    }
+  }
+
+  &[data-nav-open='true'] {
+    transform: 0;
+  }
+
+  @include a.screen(smallScreen) {
+    transform: 0;
+    position: absolute;
+    flex-direction: row;
+    background-color: transparent;
+    margin-top: 5.3rem;
+    width: clamp(5rem, 60vw, 90rem);
+    justify-content: space-evenly;
+    padding: 0;
+  }
+
+  &__elements {
+    color: #fff;
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    transition: color 0.1s ease-in;
+
+    @include a.screen(smallScreen) {
+      font-size: 1.8rem;
+    }
+
+    &:hover {
+      color: a.$clr-accent;
+    }
+  }
+  &__toggleBtn {
+    position: absolute;
+    top: clamp(1rem, 20vw, 3rem);
+    right: clamp(1rem, 20vw, 3rem);
+    z-index: 9999;
+    border: 0;
+    background-color: transparent;
+    color: a.$clr-font-light;
+    aspect-ratio: 1;
+    width: 4rem;
+    cursor: pointer;
+
+    @include a.screen(smallScreen) {
+      display: none;
+    }
+
+    i {
+      font-size: 4rem;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@use '../abstracts/' as a;
+
+.section2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // padding-top: 0.2rem;
+
+  &__title {
+    font-size: clamp(1rem, 10vw, 6rem);
+    text-transform: capitalize;
+    font-family: 'Lobster', sans-serif;
+    @include a.screen(smallScreen) {
+      padding-top: 14rem;
+    }
+  }
+
+  &__paragraph {
+    text-align: center;
+    font-size: clamp(1.6rem, 2vw, 2.6rem);
+      padding: 0 5rem;
+    @include a.screen(smallScreen) {
+      padding: 0 25rem;
+    }
+  }
+  &__flex {
+    &--container {
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+
+      @include a.screen(smallScreen) {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+        padding-top: 7rem;
+      }
+    }
+
+    &--image {
+      aspect-ratio: 1;
+      width: clamp(20rem, 20vw, 25.4rem);
+      // margin: 0 auto;
+    }
+    &--title {
+      font-family: 'Lobster', sans-serif;
+      text-align: center;
+      font-size: clamp(2.9rem, 2vw, 3rem);
+      padding-top: 1rem;
+    }
+    &--paragraph {
+      width: clamp(18rem, 20vw, 25.4rem);
+      text-align: center;
+      // margin: 0 auto;
+      font-size: clamp(1.7rem, 2vw, 1.7rem);
+      padding-top: 1rem;
+    }
+  }
+}

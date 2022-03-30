@@ -1,0 +1,13 @@
+@use '../abstracts' as a;
+
+.button {
+  background-color: a.$clr-accent;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 0.7rem;
+  border: none;
+  width: min(24.8rem, 30vw);
+  height: min(5.3rem, 10vw);
+  font-weight: bold;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
